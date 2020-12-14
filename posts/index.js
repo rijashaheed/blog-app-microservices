@@ -16,7 +16,6 @@ app.post("/posts", (req, res) => {
 	const id = randomBytes(4).toString("hex");
 	console.log("indicator");
 	console.log(req);
-	const { title } = req.body;
 	const { title } = req.body; //normally request headers are read too 
 
 	posts[id] = {
