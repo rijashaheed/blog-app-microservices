@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 const posts = {};
 
 app.get("/posts", (req, res) => {
-	res.send(posts);
+	res.send(posts);    //request and respond both have body and status code
+											//200 201 are successful therefore there must me body but in status code 400 etc request is not succesful so we would see the error there will be no body
 });
 
 app.post("/posts", (req, res) => {
@@ -16,6 +17,7 @@ app.post("/posts", (req, res) => {
 	console.log("indicator");
 	console.log(req);
 	const { title } = req.body;
+	const { title } = req.body; //normally request headers are read too 
 
 	posts[id] = {
 		id,
